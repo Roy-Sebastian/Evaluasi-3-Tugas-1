@@ -1,0 +1,31 @@
+/* Critical CSS for above-the-fold content */
+body {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.8);
+}
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: transparent!important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+.ftco-cover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.ftco-slant {
+  position: relative;
+  overflow: hidden;
+}
+.ftco-vh-100 {
+  height: 100vh;
+}

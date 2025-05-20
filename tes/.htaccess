@@ -1,0 +1,22 @@
+# Security Headers
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "no-referrer-when-downgrade"
+Header always set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; font-src 'self' data: https:;"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
+
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Set browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
